@@ -1,0 +1,77 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Segoe UI", Tahoma, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  line-height: 2.2;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+header {
+  background: linear-gradient(135deg, #0f4c81, #1d7ac4);
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.logo { font-size: 42px; font-weight: 700; }
+.logo span { font-size: 20px; opacity: .85; display: block; letter-spacing: 4px; }
+.tagline { margin-top: 10px; font-size: 18px; opacity: .95; }
+
+nav {
+  background: #0d3a63;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: #dbeafe;
+  text-decoration: none;
+  margin: 0 14px;
+  font-size: 16px;
+}
+nav a:hover { color: #fff; }
+
+main { padding: 30px 16px; }
+
+section { margin-bottom: 40px; }
+
+h2 {
+  color: #0f4c81;
+  font-size: 26px;
+  border-bottom: 3px solid #1d7ac4;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 18px;
+}
+
+.note { background: #fff8e1; border: 1px solid #f2c94c; padding: 10px 14px; border-radius: 8px; display: inline-block; }
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(15, 76, 129, .08);
+}
+
+.card h3 { color: #0f4c81; font-size: 20px; margin-bottom: 6px; }
+.card p { font-size: 16px; color: #374151; }
+
+footer {
+  background: #0f4c81;
+  color: #dbeafe;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 32px; }
+  nav a { margin: 0 8px; font-size: 14px; }
+}
