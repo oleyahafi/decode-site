@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Blog</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables & Reset */
+        :root {
+            --primary-blue: #1e3a5f;
+            --accent-teal: #00a896;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--text-light);
+            color: var(--text-dark);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Top Header */
+        .top-bar {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 50px;
+            font-size: 12px;
+        }
+        
+        /* Main Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: var(--text-light);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+        }
+        .hero-card {
+            background-color: rgba(30, 58, 95, 0.9);
+            color: var(--text-light);
+            padding: 40px;
+            width: 400px;
+            border-left: 5px solid var(--accent-teal);
+        }
+        .hero-card h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .hero-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: var(--accent-teal);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        /* Quick Access Bar (Categories) */
+        .quick-access {
+            display: flex;
+            justify-content: center;
+            background-color: #e0e6ed;
+            padding: 20px 50px;
+            gap: 40px;
+        }
+        .qa-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-align: center;
+        }
+        .qa-icon {
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent-teal);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Featured Section */
+        .services {
+            padding: 50px;
+        }
+        .section-title {
+            text-align: right;
+            color: var(--accent-teal);
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service-box {
+            background: var(--primary-blue);
+            color: white;
+            padding: 20px;
+        }
+        .service-box.light {
+            background: var(--bg-light);
+            color: var(--primary-blue);
+            border: 1px solid #ddd;
+        }
+        .service-box.accent {
+            background: #d62828;
+        }
+        .service-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(30,58,95,0.8), rgba(30,58,95,0.8)), url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') fixed center/cover;
+            color: white;
+            padding: 60px 50px;
+            text-align: center;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        .stat-item h3 {
+            font-size: 36px;
+            color: var(--accent-teal);
+            margin-bottom: 10px;
+        }
+
+        /* Blog Articles Section */
+        .news-section {
+            background-color: var(--primary-blue);
+            padding: 50px;
+            color: white;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .news-card {
+            background: white;
+            color: var(--text-dark);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f1e32;
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar (Contact Info) -->
+    <div class="top-bar">
+        <div>ईमेल: contact@myblog.com | फोन: +91-9876543210</div>
+        <div>सब्सक्राइब करें | लॉगिन</div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-blog"></i> MY BLOG
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">होम</a></li>
+                <li><a href="#">मेरे बारे में</a></li>
+                <li><a href="#">ब्लॉग पोस्ट</a></li>
+                <li><a href="#">संपर्क करें</a></li>
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-card">
+            <h2>मेरे प्रोफेशनल ब्लॉग में आपका स्वागत है</h2>
+            <p>यहाँ आपको तकनीक, लाइफस्टाइल और यात्रा से जुड़े बेहतरीन और ज्ञानवर्धक लेख पढ़ने को मिलेंगे। आज ही हमारी कम्युनिटी का हिस्सा बनें।</p>
+            <button class="btn">लेटेस्ट पोस्ट पढ़ें</button>
+        </div>
+    </section>
+
+    <!-- Quick Access (Blog Categories) -->
+    <section class="quick-access">
+        <div class="qa-item">
+            <div class="qa-icon"><i class="fas fa-laptop-code"></i></div>
+            टेक्नोलॉजी
+        </div>
+        <div class="qa-item">
+            <div class="qa-icon"><i class="fas fa-plane-departure"></i></div>
+            यात्रा (Travel)
+        </div>
+        <div class="qa-item">
+            <div class="qa-icon"><i class="fas fa-utensils"></i></div>
+            खान-पान (Food)
+        </div>
+        <div class="qa-item">
+            <div class="qa-icon"><i class="fas fa-camera"></i></div>
+            फोटोग्राफी
+        </div>
+        <div class="qa-item">
+            <div class="qa-icon"><i class="fas fa-envelope"></i></div>
+            संपर्क जानकारी
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="services">
+        <h2 class="section-title">ब्लॉग की मुख्य विशेषताएँ</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>मुझसे संपर्क करें</h3>
+                <p><br>ईमेल भेजें<br>सोशल मीडिया लिंक<br>फीडबैक फॉर्म</p>
+            </div>
+            <div class="service-box light">
+                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blogging">
+                <p>टेक्नोलॉजी और गैजेट्स पर ताज़ा जानकारी</p>
+            </div>
+            <div class="service-box accent">
+                <h3>सब्सक्राइब करें</h3>
+                <p><br>हर हफ्ते नए अपडेट पाएं<br>फ्री न्यूज़लेटर</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Figures Section -->
+    <section class="stats-section">
+        <h2>ब्लॉग के आंकड़े (2026)</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>450+</h3>
+                <p>कुल ब्लॉग पोस्ट</p>
+            </div>
+            <div class="stat-item">
+                <h3>15K</h3>
+                <p>मंथली रीडर्स</p>
+            </div>
+            <div class="stat-item">
+                <h3>1 200</h3>
+                <p>सब्सक्राइबर्स</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>गेस्ट ऑथर्स</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section (Latest Articles) -->
+    <section class="news-section">
+        <h2>ताज़ा लेख (LATEST ARTICLES)</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Article 1">
+                <div class="news-content">
+                    <h4>कोडिंग कैसे सीखें?</h4>
+                    <p>शुरुआती लोगों के लिए HTML, CSS और JavaScript सीखने की पूरी गाइड।</p>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1504280741564-f65bea69e1bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Article 2">
+                <div class="news-content">
+                    <h4>वेबसाइट डिज़ाइन टिप्स</h4>
+                    <p>अपनी वेबसाइट को आकर्षक और प्रोफेशनल बनाने के लिए 5 बेहतरीन तरीके।</p>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Article 3">
+                <div class="news-content">
+                    <h4>संपर्क फॉर्म कैसे बनाएं?</h4>
+                    <p>अपनी वेबसाइट में एक सुरक्षित और रिस्पॉन्सिव कांटेक्ट फॉर्म जोड़ना सीखें।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Professional Blog. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <i class="fab fa-facebook" style="font-size: 20px; margin: 0 10px;"></i>
+            <i class="fab fa-twitter" style="font-size: 20px; margin: 0 10px;"></i>
+            <i class="fab fa-linkedin" style="font-size: 20px; margin: 0 10px;"></i>
+            <i class="fab fa-instagram" style="font-size: 20px; margin: 0 10px;"></i>
+        </p>
+    </footer>
+
+</body>
+</html>
