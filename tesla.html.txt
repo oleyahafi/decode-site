@@ -27,7 +27,7 @@
     </header>
     
     <div class="container">
-        <h1>Tesla: The Future of Electric Vehicles in 2026</h1>
+        <h1>Tesla: The Future of Electric Vehicles in 2026</h1><img src="car.jpg" alt="Tesla Car" style="width: 100%; border-radius: 8px; margin-top: 15px; margin-bottom: 15px;">
         <div class="article-meta">Published on October 16, 2026 | By Irfan</div>
         
         <div class="article-content">
